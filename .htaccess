@@ -1,0 +1,12 @@
+RewriteBase /
+RewriteCond %{THE_REQUEST} ^GET.*index\.php [NC]
+RewriteRule (.*?)index\.php/*(.*) /%1%2 [R=301,NE,L]
+AddType application/x-httpd-php-old .php
+
+RewriteEngine On
+RewriteRule ^FriendList$ /SteamTogether/getfriendlist.php [L,NC]
+RewriteRule ^FindSharedGames$ /SteamTogether/getsharedgames.php [L,NC]
+RewriteRule ^GameInfo$ /SteamTogether/getgameinfos.php [L,NC]
+RewriteRule ^FindUserFromProfileName$ /SteamTogether/getuserbyprofilename.php [L,NC]
+
+Options +Indexes
